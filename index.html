@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+    Club Stride Intern Roles - Criteria & Requirements
+    
+    IMPORTANT: Place your Club Stride logo file in the same directory as this HTML file.
+    Supported formats: PNG, JPG, SVG
+    Recommended: logo.png (transparent background)
+    
+    If your logo appears dark on the black header, uncomment the filter line in the CSS
+    (search for "filter: brightness" in the styles).
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Stride Intern Roles - Criteria & Requirements</title>
+    <!-- Note: Instrument Sans font would need to be loaded via @font-face or a font service -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #000000;
+            background-color: #FFFFFF;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            border-radius: 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: #000000;
+            color: #FFFFFF;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: #2C57FA;
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+        
+        .header img,
+        .header .logo {
+            height: 60px;
+            width: auto;
+            margin-bottom: 20px;
+            /* If logo is dark on transparent background, uncomment the line below */
+            /* filter: brightness(0) invert(1); */
+        }
+        
+        .header h1 {
+            font-family: 'Instrument Sans', sans-serif;
+            font-weight: 500;
+            font-size: 32px;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .tabs {
+            display: flex;
+            background-color: #f5f5f5;
+            border-bottom: 3px solid #000000;
+        }
+        
+        .tab-button {
+            flex: 1;
+            padding: 20px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.3s ease;
+            position: relative;
+            font-family: 'Instrument Sans', sans-serif;
+        }
+        
+        .tab-button:hover {
+            background-color: #eeeeee;
+            color: #000000;
+        }
+        
+        .tab-button.active {
+            color: #2C57FA;
+            background-color: #FFFFFF;
+            font-weight: 600;
+        }
+        
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #2C57FA;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .role-content {
+            display: none;
+        }
+        
+        .role-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .role-header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #000000;
+        }
+        
+        .role-title {
+            font-size: 32px;
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 10px;
+            font-family: 'Instrument Sans', sans-serif;
+        }
+        
+        .role-overview {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Instrument Sans', sans-serif;
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: #2C57FA;
+            margin-right: 12px;
+            border-radius: 0;
+        }
+        
+        .criteria-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .criteria-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        
+        .criteria-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            color: #2C57FA;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .highlight-box {
+            background-color: #f0f4ff;
+            border-left: 4px solid #2C57FA;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0;
+        }
+        
+        .highlight-box h4 {
+            color: #000000;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        
+        .commitment-details {
+            background-color: #fff5eb;
+            border-left: 4px solid #FA962C;
+            padding: 20px;
+            border-radius: 0;
+            margin: 20px 0;
+        }
+        
+        .commitment-details h4 {
+            color: #000000;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        
+        .stipend-info {
+            background-color: #000000;
+            border: none;
+            padding: 25px;
+            border-radius: 0;
+            margin: 20px 0;
+            color: #FFFFFF;
+        }
+        
+        .stipend-info h4 {
+            color: #FA962C;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        
+        .stipend-info p {
+            color: #FFFFFF;
+        }
+        
+        .stipend-info strong {
+            color: #FA962C;
+            font-size: 24px;
+        }
+        
+        .stipend-info .criteria-list li {
+            color: #FFFFFF;
+        }
+        
+        .stipend-info .criteria-list li::before {
+            color: #FA962C;
+            content: '▸';
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #000000;
+            color: #FFFFFF;
+            font-size: 14px;
+        }
+        
+        .footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <!-- Club Stride logo - place logo file in the same directory as this HTML file -->
+            <!-- Change src="logo.png" to match your file name (e.g., "club-stride-logo.jpg", "logo.svg") -->
+            <img src="logo.png" alt="Club Stride Logo" class="logo" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+            <div id="logo-fallback" style="display: none; margin-bottom: 20px; font-size: 14px; opacity: 0.7;">[ Club Stride ]</div>
+            <h1>Club Stride Internship Program</h1>
+            <p>Youth Public Health & Civic Empowerment Campaign</p>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-button active" onclick="showRole('lead')">Lead Intern (College)</button>
+            <button class="tab-button" onclick="showRole('core')">Core Intern (High School)</button>
+        </div>
+        
+        <div class="content">
+            <!-- Lead Intern Content -->
+            <div id="lead-content" class="role-content active">
+                <div class="role-header">
+                    <h2 class="role-title">Lead Intern Position</h2>
+                    <p class="role-overview">Lead Interns (college-level) serve as the frontline youth ambassadors and campaign leaders across all Club Stride sites. They support Core Interns, model digital storytelling, and ensure campaign quality and consistency while driving visibility and impact across schools.</p>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Eligibility Criteria</h3>
+                    <ul class="criteria-list">
+                        <li>Enrolled in a 2- or 4-year college program (1st–3rd year students preferred)</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Required Skills & Experience</h3>
+                    <ul class="criteria-list">
+                        <li>Demonstrated ability to lead or coordinate projects (campus, community, or class-based)</li>
+                        <li>Familiarity with digital platforms (Instagram, Canva, Google Drive)</li>
+                        <li>Strong verbal and written communication skills</li>
+                        <li>Comfortable with being on camera; must possess an authentic, vibrant personality and willingness to model engagement through video content</li>
+                        <li>Social media fluency: Instagram (Reels, Lives, Stories) and familiarity with TikTok trends preferred</li>
+                        <li>Comfortable facilitating small group meetings or peer-based events</li>
+                        <li>Ability to manage tasks independently and meet deadlines</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Preferred Skills & Experience</h3>
+                    <ul class="criteria-list">
+                        <li>Experience creating or managing social media content</li>
+                        <li>Knowledge of public health campaigns</li>
+                        <li>Prior experience working with youth, community organizing, or civic engagement projects</li>
+                        <li>Familiarity with basic data tracking or willingness to learn (Google Sheets or Excel)</li>
+                        <li>Background or coursework in marketing, communications, public health, digital media, or youth development strongly preferred</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Personal Attributes</h3>
+                    <ul class="criteria-list">
+                        <li>Reliable and responsive communicator</li>
+                        <li>Strong interest in youth empowerment, public health, or social impact work</li>
+                        <li>Open to feedback and collaboration with both staff and peers</li>
+                        <li>Willingness to be a visible representative of Club Stride on campus</li>
+                    </ul>
+                </div>
+                
+                <div class="commitment-details">
+                    <h4>Time Commitment</h4>
+                    <ul class="criteria-list">
+                        <li>Approximately 100 hours from August 2025 – May 2026 (includes onboarding, content creation, peer engagement, and campaign delivery)</li>
+                        <li>6–10 hours per week</li>
+                        <li>Must be available to attend team orientation and monthly check-ins</li>
+                        <li>Must have reliable access to internet and mobile device or laptop</li>
+                    </ul>
+                </div>
+                
+                <div class="stipend-info">
+                    <h4>Compensation</h4>
+                    <p><strong>$20 per hour</strong> (paid stipend)</p>
+                    <p>Total potential earnings: $2,000 for 100 hours</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Bonus Considerations</h4>
+                    <ul class="criteria-list">
+                        <li>Bilingual or multilingual applicants are encouraged to apply</li>
+                        <li>Students with lived experience or connection to Solano County communities will be prioritized</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Training & Onboarding Requirements</h3>
+                    <ul class="criteria-list">
+                        <li>Must complete the Intern Foundational Training Series</li>
+                        <li>Participate in Club Stride orientation sessions (digital and/or in-person)</li>
+                        <li>Review the Club Stride Internal Strategy, Risk Mitigation Guide, and Campus Engagement Plan</li>
+                        <li>Sign the Confidentiality & IP Agreement before accessing campaign materials</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Core Intern Content -->
+            <div id="core-content" class="role-content">
+                <div class="role-header">
+                    <h2 class="role-title">Core Intern Position</h2>
+                    <p class="role-overview">Core Interns are high school students who serve as the creative force and peer ambassadors for Club Stride. This internship is for students who are excited to be the face of youth campaigns—creative, confident, and eager to amplify their voice.</p>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Eligibility Criteria</h3>
+                    <ul class="criteria-list">
+                        <li>Must be a current high school student (Grades 10–12 preferred)</li>
+                        <li>Enrolled at a participating Club Stride campus or invited through Club Stride outreach</li>
+                        <li>Available for the full internship term (August–December 2025 for Fall cohort)</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Key Attributes We're Looking For</h3>
+                    <ul class="criteria-list">
+                        <li>Vibrant personality with enthusiasm for representing youth voice</li>
+                        <li>Comfortable on camera — willing to speak, share stories, or appear in Reels, Lives, and digital content</li>
+                        <li>Energetic, confident, and expressive, with a desire to influence peers positively</li>
+                        <li>Open to peer engagement, campus advocacy, and youth-led storytelling</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Required Skills & Interests</h3>
+                    <ul class="criteria-list">
+                        <li>Interest in storytelling, social media, public health, or civic topics</li>
+                        <li>Willing to participate in campaign creation and promote healthy messages</li>
+                        <li>Able to meet deadlines, complete tasks independently, and work on a team</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Preferred Skills & Interests</h3>
+                    <ul class="criteria-list">
+                        <li>Familiarity with Instagram, TikTok, or Canva</li>
+                        <li>Experience in school media, leadership clubs, or community events</li>
+                        <li>Interest in health equity, prevention, and peer advocacy</li>
+                    </ul>
+                </div>
+                
+                <div class="commitment-details">
+                    <h4>Time Commitment</h4>
+                    <ul class="criteria-list">
+                        <li>Approximately 75 hours (Aug–Dec 2025 for Fall cohort)</li>
+                        <li>5–6 hours per week</li>
+                        <li>Weekly on-campus presence and team meetings</li>
+                    </ul>
+                    <h4 style="margin-top: 20px;">Regular Content Contributions</h4>
+                    <ul class="criteria-list">
+                        <li>2 Reels per week</li>
+                        <li>1 Instagram Live every two weeks</li>
+                        <li>1 peer-led event every other month</li>
+                    </ul>
+                </div>
+                
+                <div class="stipend-info">
+                    <h4>Compensation & Support</h4>
+                    <p><strong>$17 per hour</strong> (paid stipend)</p>
+                    <p>Total potential earnings: $1,275 for 75 hours (Fall cohort)</p>
+                    <p style="margin-top: 10px;">Additional benefits:</p>
+                    <ul class="criteria-list">
+                        <li>Mentorship from Club Stride staff + college Lead Interns</li>
+                        <li>Access to media training, civic learning, and public health messaging guides</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4>Bonus Points</h4>
+                    <ul class="criteria-list">
+                        <li>Students who are natural communicators, enjoy engaging with peers, and thrive in creative spaces</li>
+                        <li>Priority for youth with lived experience in Solano County</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3 class="section-title">Important Note</h3>
+                    <p>This internship is for students who are excited to be the face of youth campaigns. If you're creative, confident, and eager to amplify your voice, this is for you!</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Club Stride: Youth Public Health & Civic Empowerment Campaign</p>
+            <p>Implementation Period: August 2025 – June 2026</p>
+        </div>
+    </div>
+    
+    <script>
+        function showRole(role) {
+            // Remove active class from all tabs and content
+            document.querySelectorAll('.tab-button').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.role-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Add active class to selected tab and content
+            if (role === 'lead') {
+                document.querySelector('.tab-button:first-child').classList.add('active');
+                document.getElementById('lead-content').classList.add('active');
+            } else {
+                document.querySelector('.tab-button:last-child').classList.add('active');
+                document.getElementById('core-content').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
