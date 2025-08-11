@@ -272,6 +272,64 @@
             content: '▸';
         }
         
+        .apply-section {
+            margin-top: 50px;
+            padding: 40px;
+            background-color: #f5f5f5;
+            text-align: center;
+            border-top: 3px solid #2C57FA;
+        }
+        
+        .apply-section h3 {
+            font-size: 28px;
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 15px;
+            font-family: 'Instrument Sans', sans-serif;
+        }
+        
+        .apply-section p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        
+        .apply-button {
+            display: inline-block;
+            background-color: #2C57FA;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 18px 50px;
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Instrument Sans', sans-serif;
+        }
+        
+        .apply-button:hover {
+            background-color: #1a3cc7;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(44, 87, 250, 0.3);
+        }
+        
+        .apply-button::before {
+            content: '→';
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            transition: right 0.3s ease;
+        }
+        
+        .apply-button:hover::before {
+            right: 20px;
+        }
+        
         .footer {
             text-align: center;
             padding: 30px;
@@ -467,6 +525,13 @@
                     <h3 class="section-title">Important Note</h3>
                     <p>This internship is for students who are excited to be the face of youth campaigns. If you're creative, confident, and eager to amplify your voice, this is for you!</p>
                 </div>
+            </div>
+            
+            <!-- Apply Now Section - Visible for both tabs -->
+            <div class="apply-section">
+                <h3>Ready to Make an Impact?</h3>
+                <p>Join the Club Stride team and become a youth leader in public health and civic empowerment!</p>
+                <a href="https://www.clubstride.org/job-application" class="apply-button" target="_blank">APPLY NOW</a>
             </div>
         </div>
         
